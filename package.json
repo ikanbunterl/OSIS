@@ -1,0 +1,29 @@
+{
+  "name": "osis-smk-tri-dharma-2-bogor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PWA Forum OSIS SMK TRI DHARMA 2 BOGOR",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "vapid": "node scripts/generate-vapid.js",
+    "test": "bash scripts/run-tests.sh",
+    "icons": "python3 scripts/gen-icons.py"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.109.0",
+    "autoprefixer": "^10.6.1",
+    "lucide-react": "^1.55.0",
+    "next": "^15.5.27",
+    "postcss": "^8.5.29",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "server-only": "^0.0.1",
+    "tailwindcss": "^3.4.19",
+    "web-push": "^3.6.7",
+    "zod": "^4.6.5",
+    "zustand": "^5.0.15"
+  }
+}

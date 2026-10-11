@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --surface: 248 250 252;
+  --surface-raised: 255 255 255;
+  --surface-sunken: 241 245 249;
+  --line: 226 232 240;
+  --ink: 15 23 42;
+  --ink-muted: 71 85 105;
+  --ink-faint: 148 163 184;
+}
+
+.dark {
+  --surface: 9 12 24;
+  --surface-raised: 17 24 39;
+  --surface-sunken: 6 9 18;
+  --line: 32 41 62;
+  --ink: 233 238 245;
+  --ink-muted: 154 166 186;
+  --ink-faint: 108 120 142;
+}
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    /* 16px = iOS tidak auto-zoom saat fokus ke input */
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-surface text-ink antialiased;
+    overscroll-behavior-y: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* form control iOS: font < 16px bikin halaman nge-zoom sendiri */
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 1rem;
+    font-family: inherit;
+  }
+
+  input[type='search']::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary-500/70 ring-offset-2 ring-offset-surface;
+  }
+
+  ::selection {
+    @apply bg-primary-500/25;
+  }
+}
+
+@layer components {
+  .kartu {
+    @apply rounded-2xl border border-line bg-surface-raised shadow-card;
+  }
+
+  .teks-bantu {
+    @apply text-sm text-ink-muted;
+  }
+
+  .label-form {
+    @apply mb-1.5 block text-sm font-semibold text-ink;
+  }
+
+  .input-dasar {
+    @apply w-full rounded-xl border border-line bg-surface-raised px-3.5 py-3 text-ink
+           placeholder:text-ink-faint transition
+           focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/25
+           disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .link-teks {
+    @apply font-semibold text-primary-600 underline-offset-2 hover:underline dark:text-primary-300;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full border border-line bg-surface-raised
+           px-2.5 py-1 text-xs font-medium text-ink-muted;
+  }
+
+  .divider {
+    @apply h-px w-full bg-line;
+  }
+}
+
+@layer utilities {
+  .area-aman-bawah {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .area-aman-atas {
+    padding-top: env(safe-area-inset-top);
+  }
+  .scroll-halus {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--ink-faint)) transparent;
+  }
+  .scroll-halus::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scroll-halus::-webkit-scrollbar-thumb {
+    background: rgb(var(--ink-faint) / 0.5);
+    border-radius: 999px;
+  }
+  .tanpa-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .tanpa-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .potong-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .potong-4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* skeleton loading */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+.skeleton {
+  @apply relative overflow-hidden rounded-lg bg-surface-sunken;
+}
+.skeleton::after {
+  content: '';
+  @apply absolute inset-0 -translate-x-full;
+  background: linear-gradient(90deg, transparent, rgb(var(--ink) / 0.06), transparent);
+  animation: shimmer 1.4s infinite;
+}
