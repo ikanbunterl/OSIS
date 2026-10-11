@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Logo OSIS SMK Tri Dharma 2 Bogor">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e2b82"/>
+      <stop offset="55%" stop-color="#1d31cc"/>
+      <stop offset="100%" stop-color="#0b1220"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fde68a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#608bf2" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#608bf2" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="104" fill="url(#bg)"/>
+  <rect width="512" height="512" rx="104" fill="url(#glow)"/>
+  <rect x="14" y="14" width="484" height="484" rx="94" fill="none" stroke="#f59e0b" stroke-opacity="0.35" stroke-width="4"/>
+
+  <!-- perisai -->
+  <path d="M256 88 388 132v118c0 86-55 146-132 176-77-30-132-90-132-176V132z"
+        fill="#0f172a" fill-opacity="0.45" stroke="url(#gold)" stroke-width="10" stroke-linejoin="round"/>
+
+  <!-- huruf TD2 -->
+  <text x="256" y="292" text-anchor="middle"
+        font-family="DejaVu Sans, Arial Black, Arial, sans-serif" font-weight="800"
+        font-size="122" letter-spacing="-2" fill="url(#gold)">TD2</text>
+
+  <!-- tiga garis "tri dharma" -->
+  <g fill="#e2e8f0" fill-opacity="0.9">
+    <rect x="196" y="318" width="120" height="10" rx="5"/>
+    <rect x="212" y="338" width="88" height="10" rx="5" fill-opacity="0.7"/>
+    <rect x="228" y="358" width="56" height="10" rx="5" fill-opacity="0.5"/>
+  </g>
+
+  <!-- bintang kecil -->
+  <path d="M256 118l11 24 26 3-19 18 5 26-23-13-23 13 5-26-19-18 26-3z" fill="#fde68a" fill-opacity="0.95"/>
+</svg>
